@@ -1,1 +1,4 @@
-# java-tutorial
+# Java Tutorial
+
+- Garbage Collection
+- Log Example
