@@ -1,37 +1,40 @@
 package com.ashim.spring.singleton;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
-	public static void main(String[] args) {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+
+	public static void test1() {
+
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
 		Singleton singleton = ctx.getBean("singleton", Singleton.class);
 
-		System.out.println("");
-		System.out.println("singleton before: " + singleton.getText());
-		System.out.println("prototype before: " + singleton.getPrototype().getText());
+		print(singleton, "singleton before: ", "prototype before: ");
 
 		singleton.setText("Modified");
 		singleton.getPrototype().setText("Modified");
 
 		// 1st retrieval
 		singleton = ctx.getBean("singleton", Singleton.class);
-		System.out.println("");
-		System.out.println("singleton after: " + singleton.getText());
-		System.out.println("prototype after: " + singleton.getPrototype().getText());
+		print(singleton, "singleton after: ", "prototype after: ");
 
 		// 2st retrieval
 		singleton = ctx.getBean("singleton", Singleton.class);
-		System.out.println("");
-		System.out.println("singleton after: " + singleton.getText());
-		System.out.println("prototype after: " + singleton.getPrototype().getText());
+		print(singleton, "singleton after: ", "prototype after: ");
 
-		((ClassPathXmlApplicationContext) ctx).close();
+		ctx.close();
+
 	}
 
-	public static void test1() {
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
+	private static void print(Singleton singleton, String s, String s2) {
+		System.out.println();
+		System.out.println(s + singleton.getText());
+		System.out.println(s2 + singleton.getPrototype().getText());
+	}
+
+	public static void main(String[] args) {
+
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("spring-config.xml");
 
 		System.out.println("----------------Singleton-------------------");
 
@@ -69,6 +72,7 @@ public class App {
 		System.out.println("----------------3st Retrival-------------------");
 		System.out.println(prototype.getText());
 
-		((ClassPathXmlApplicationContext) ctx).close();
+		ctx.close();
+
 	}
 }
