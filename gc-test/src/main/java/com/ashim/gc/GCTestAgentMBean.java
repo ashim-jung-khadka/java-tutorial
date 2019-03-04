@@ -1,9 +1,10 @@
 package com.ashim.gc;
 
 public interface GCTestAgentMBean {
+
 	void newThread(String threadName);
 
-	void newCollectableObject(int size);
+	void newCollectibleObject(int size);
 
 	void newLeakedObject1(int size);
 

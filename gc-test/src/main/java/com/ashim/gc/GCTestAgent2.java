@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class GCTestAgent2 implements GCTestAgent2MBean, Runnable {
+
 	ArrayList<Object> leakingList1 = new ArrayList<>();
 	ArrayList<Object> leakingList2 = new ArrayList<>();
 	volatile double val = 10;
@@ -16,7 +17,7 @@ public class GCTestAgent2 implements GCTestAgent2MBean, Runnable {
 	}
 
 	@Override
-	public void newCollectableObject(int size) {
+	public void newCollectibleObject(int size) {
 		createObject(size);
 	}
 
@@ -40,7 +41,7 @@ public class GCTestAgent2 implements GCTestAgent2MBean, Runnable {
 
 	@Override
 	public void run() {
-		for (;;) {
+		for (; ; ) {
 			System.out.println(Thread.currentThread().getName());
 			try {
 				Thread.sleep(10000);
