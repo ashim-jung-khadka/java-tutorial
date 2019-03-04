@@ -1,10 +1,9 @@
-package com.takipi.benchmark.logging.tests;
+package com.ashim.benchmark.logging.tests;
 
-public class ThrowableTest extends ToStringTest
-{
+public class ThrowableTest extends ToStringTest {
+
 	@Override
-	protected void test()
-	{
+	protected void test() {
 		logger.info("to string test: [lala] [" + new ToStringObject() + "] [" + getRandomList() + "]", new IllegalStateException("throwable test"));
 	}
 }
