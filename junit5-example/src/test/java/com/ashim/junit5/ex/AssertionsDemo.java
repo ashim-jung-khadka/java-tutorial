@@ -50,7 +50,7 @@ class AssertionsDemo {
 
 					// Executed only if the previous assertion is valid.
 					assertAll("first name",
-							() -> assertTrue(firstName.startsWith("j")),
+							() -> assertTrue(firstName.startsWith("J")),
 							() -> assertTrue(firstName.endsWith("e"))
 					);
 				},
