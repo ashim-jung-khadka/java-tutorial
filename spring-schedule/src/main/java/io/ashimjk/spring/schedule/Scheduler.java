@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Slf4j
 @Component
-public class EventCreator {
+public class Scheduler {
 
     /**
      * runs every 1 second
