@@ -2,5 +2,7 @@
 
 - Garbage Collection
 - Log Example
-- Spring Singleton
 - Dynamic Code
+- Dynamic-proxy
+- Junit5 Example
+- Mockito Example

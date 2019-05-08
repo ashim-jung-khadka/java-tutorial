@@ -19,13 +19,8 @@
         <module>dynamic-proxy</module>
         <module>gc-test</module>
         <module>logging-benchmark</module>
-        <module>spring-singleton</module>
-        <module>spring-tx</module>
         <module>junit5-example</module>
         <module>mockito-example</module>
-        <module>spring-event-handling</module>
-        <module>spring-schedule</module>
-        <module>annotation-processor-ex</module>
     </modules>
 
     <packaging>pom</packaging>
